@@ -40,3 +40,25 @@ var quiz = [
         correct: 'c'
     }
 ]
+
+var question = document.gerElementById('question');
+
+var atext = document.getElementById('atext'); 
+var btext = document.getElementById('btext'); 
+var ctext = document.getElementById('ctext'); 
+var dtext = document.getElementById('dtext'); 
+
+var curques = 0;
+
+loadquiz();
+
+function loadquiz() {
+    var curquiz = quiz[curques];
+    question.innerText = curquiz.question;
+    atext.innerText = curquiz.a;
+    btext.innerText = curquiz.b;
+    ctext.innerText = curquiz.c;
+    dtext.innerText = curquiz.d;
+
+    curques++;
+}

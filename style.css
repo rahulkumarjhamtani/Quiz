@@ -10,7 +10,7 @@ body
     margin:auto;
     margin-top: 20vh;
     background-color:#b8c6db;
-    background-image: linear-gradient(315deg, #b8c6db 0%, #bed8ff 74%);
+    background-image: linear-gradient(315deg, #b8c6db 0%, #bed8ff 100%);
     padding-top: 5vh;
     box-shadow: 0 0 10px 5px rgba(0,0,0,0.7);
 }
@@ -22,12 +22,21 @@ h2
 ul
 {
     list-style-type: none;
-    padding-left:10px;
+    padding-left:15px;
 }
 li
 {
     font-family: 'Hind', sans-serif;
     font-size: 17px;
+    margin-bottom:1%;
+}
+li, input, label
+{
+    cursor: pointer;
+}
+label
+{
+    margin-left:1.5vh;
 }
 button
 {
@@ -39,8 +48,14 @@ button
     cursor: pointer;
     background-color: rgb(23, 23, 255);
     color: white;
-    font-size: 20px;
+    font-size: 19px;
     font-family: 'Montserrat Alternates', sans-serif;
+    transition: background-color 0.3s;
+}
+button:hover
+{
+    background-color: rgb(3, 3, 214);
+
 }
 @media (max-width:550px)
 {
