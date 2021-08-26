@@ -41,12 +41,14 @@ var quiz = [
     }
 ]
 
-var question = document.gerElementById('question');
+var question = document.getElementById('question');
 
 var atext = document.getElementById('atext'); 
 var btext = document.getElementById('btext'); 
 var ctext = document.getElementById('ctext'); 
 var dtext = document.getElementById('dtext'); 
+
+var submit = document.getElementById('submit'); 
 
 var curques = 0;
 
@@ -60,5 +62,16 @@ function loadquiz() {
     ctext.innerText = curquiz.c;
     dtext.innerText = curquiz.d;
 
-    curques++;
 }
+
+submit.addEventListener("click", () => {
+    curques++;
+    if(curques < quiz.length)
+    {
+        loadquiz();
+    }
+    else
+    {
+        alert('Quiz Completed');
+    }
+});

@@ -18,6 +18,9 @@ h2
 {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
+    padding-left:15px;
+    padding-right:15px;
+    margin-bottom: 5vh;
 }
 ul
 {
@@ -30,7 +33,7 @@ li
     font-size: 17px;
     margin-bottom:1%;
 }
-li, input, label
+input, label
 {
     cursor: pointer;
 }
@@ -57,10 +60,31 @@ button:hover
     background-color: rgb(3, 3, 214);
 
 }
-@media (max-width:550px)
+@media (max-width:575px)
 {
     .quiz
     {
         width:100%;
+    }
+}
+@media (min-width:575px) and (max-width:767px)
+{
+    .quiz
+    {
+        width:85%;
+    }
+}
+@media (min-width:768px) and (max-width:991px)
+{
+    .quiz
+    {
+        width:70%;
+    }
+}
+@media (min-width:992px) and (max-width:1199px)
+{
+    .quiz
+    {
+        width:55%;
     }
 }
