@@ -42,6 +42,7 @@ var quiz = [
 ]
 
 var question = document.getElementById('question');
+var ans = undefined;
 
 var atext = document.getElementById('atext'); 
 var btext = document.getElementById('btext'); 
@@ -64,14 +65,26 @@ function loadquiz() {
 
 }
 
+function getans() {
+    var answers = document.querySelectorAll(".answer");
+    answers.forEach((answer) => {
+        if(answer.checked)
+        {
+            ans = answer.id;
+        }
+    });
+}
+
 submit.addEventListener("click", () => {
     curques++;
-    if(curques < quiz.length)
-    {
-        loadquiz();
-    }
-    else
-    {
-        alert('Quiz Completed');
-    }
+
+    getans();
+    // if(curques < quiz.length)
+    // {
+    //     loadquiz();
+    // }
+    // else
+    // {
+    //     alert('Quiz Completed');
+    // }
 });
