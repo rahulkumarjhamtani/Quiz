@@ -42,6 +42,7 @@ var quiz = [
 ]
 
 var question = document.getElementById('question');
+var answers = document.querySelectorAll(".answer");
 var score = 0;
 
 var atext = document.getElementById('atext'); 
@@ -56,6 +57,7 @@ var curques = 0;
 loadquiz();
 
 function loadquiz() {
+    noans();
     var curquiz = quiz[curques];
     question.innerText = curquiz.question;
     atext.innerText = curquiz.a;
@@ -66,8 +68,7 @@ function loadquiz() {
 }
 
 function getans() {
-    var answers = document.querySelectorAll(".answer");
-
+    
     let ans = undefined;
     answers.forEach((answer) => {
         if(answer.checked)
@@ -77,6 +78,12 @@ function getans() {
     });
     
     return ans;
+}
+
+function noans() {
+    answers.forEach((answer) => {
+        answer.checked = false;
+    });
 }
 
 submit.addEventListener("click", () => {
