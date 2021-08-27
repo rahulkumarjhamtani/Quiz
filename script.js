@@ -35,7 +35,7 @@ var quiz = [
         question: 'What is a bug ?',
         a: 'Computer Virus',
         b: 'Error in Computer Configuration',
-        c: 'Error in a Programme',
+        c: 'Error in a Program',
         d: 'None of these',
         correct: 'c'
     }
