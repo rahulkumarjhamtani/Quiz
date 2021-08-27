@@ -42,7 +42,7 @@ var quiz = [
 ]
 
 var question = document.getElementById('question');
-var ans = undefined;
+var score = 0;
 
 var atext = document.getElementById('atext'); 
 var btext = document.getElementById('btext'); 
@@ -67,35 +67,40 @@ function loadquiz() {
 
 function getans() {
     var answers = document.querySelectorAll(".answer");
+
+    let ans = undefined;
     answers.forEach((answer) => {
         if(answer.checked)
         {
-            return answer.id;
+            ans = answer.id;
         }
     });
     
-    return undefined;
+    return ans;
 }
 
 submit.addEventListener("click", () => {
-    if(answer)
-    {
-        if(answer == quiz[curques])
-        {
-
-        }
-    }
-    curques++;
-
+    
     var answer = getans();
 
-    if(curques < quiz.length)
+    if(answer)
     {
-        loadquiz();
+        if(answer === quiz[curques].correct)
+        {
+            score++;
+        }
+        curques++;
+
+        if(curques < quiz.length)
+        {
+            loadquiz();
+        }
+        else
+        {
+            alert('Quiz Completed');
+        }
     }
-    else
-    {
-        alert('Quiz Completed');
-    }
+
+
     
 });
