@@ -70,21 +70,32 @@ function getans() {
     answers.forEach((answer) => {
         if(answer.checked)
         {
-            ans = answer.id;
+            return answer.id;
         }
     });
+    
+    return undefined;
 }
 
 submit.addEventListener("click", () => {
+    if(answer)
+    {
+        if(answer == quiz[curques])
+        {
+
+        }
+    }
     curques++;
 
-    getans();
-    // if(curques < quiz.length)
-    // {
-    //     loadquiz();
-    // }
-    // else
-    // {
-    //     alert('Quiz Completed');
-    // }
+    var answer = getans();
+
+    if(curques < quiz.length)
+    {
+        loadquiz();
+    }
+    else
+    {
+        alert('Quiz Completed');
+    }
+    
 });
