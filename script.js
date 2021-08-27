@@ -41,6 +41,7 @@ var quiz = [
     }
 ]
 
+var total = document.getElementById('quiz');
 var question = document.getElementById('question');
 var answers = document.querySelectorAll(".answer");
 var score = 0;
@@ -104,7 +105,7 @@ submit.addEventListener("click", () => {
         }
         else
         {
-            alert('Quiz Completed');
+            total.innerHTML = `<h2>Score : ${score} / ${quiz.length}</h2><button onclick="location.reload()">Replay</button>`;
         }
     }
 
