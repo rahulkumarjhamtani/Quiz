@@ -1,3 +1,4 @@
+// all questions and answers in the quiz
 var quiz = [
     {
         question: 'What is the number of planets in our solar system ?',
@@ -41,6 +42,7 @@ var quiz = [
     }
 ]
 
+// global variables
 var total = document.getElementById('quiz');
 var question = document.getElementById('question');
 var answers = document.querySelectorAll(".answer");
@@ -57,6 +59,7 @@ var curques = 0;
 
 loadquiz();
 
+// load quiz
 function loadquiz() {
     noans();
     var curquiz = quiz[curques];
@@ -68,6 +71,7 @@ function loadquiz() {
 
 }
 
+// get answer which is selected
 function getans() {
     
     let ans = undefined;
@@ -81,6 +85,7 @@ function getans() {
     return ans;
 }
 
+// no answer is selected
 function noans() {
     answers.forEach((answer) => {
         answer.checked = false;
@@ -108,7 +113,5 @@ submit.addEventListener("click", () => {
             total.innerHTML = `<h2>Score : ${score} / ${quiz.length}</h2><button onclick="location.reload()">Replay</button>`;
         }
     }
-
-
     
 });
