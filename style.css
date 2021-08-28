@@ -60,6 +60,7 @@ button:hover
     background-color: rgb(3, 3, 214);
 
 }
+/* responsiveness */
 @media (max-width:575px)
 {
     .quiz
